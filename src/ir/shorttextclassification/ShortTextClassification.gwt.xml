@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.1//EN"
+  "http://google-web-toolkit.googlecode.com/svn/tags/2.5.1/distro-source/core/src/gwt-module.dtd"> -->
+<module rename-to='shorttextclassification'>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name="com.google.gwt.inject.Inject" />
+	<inherits name="com.gwtplatform.dispatch.Dispatch" />
+	<inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+
+		<inherits name="com.google.web.bindery.requestfactory.RequestFactory" />
+	<inherits name="com.google.gwt.i18n.I18N" />
+
+	<inherits name='com.google.gwt.editor.Editor' />
+	<inherits name='com.google.gwt.logging.Logging' />
+
+	<set-property name="gwt.logging.simpleRemoteHandler"
+		value="ENABLED" />
+	<set-property name="gwt.logging.logLevel" value="INFO" />
+	<source path='client' />
+	<source path='shared' />
+	<set-configuration-property name="gin.ginjector.modules"
+		value="ir.shorttextclassification.client.gin.ClientModule" />
+
+</module>

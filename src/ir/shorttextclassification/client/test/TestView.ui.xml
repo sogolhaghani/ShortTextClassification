@@ -1,0 +1,169 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:local='urn:import:ir.shorttextclassification.client.widget'>
+
+	<ui:style>
+		.header {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		font-size:
+		24px;
+		text-align:
+		right;
+		position: relative;
+		padding: 30px 15px;
+		color:
+		#cdbfe3;
+		text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+		background-color:
+		#6f5499;
+		background-image: -webkit-gradient(linear, left top, left
+		bottom,
+		from(#563d7c),
+		to(#6f5499));
+		background-image:
+		-webkit-linear-gradient(top, #563d7c 0, #6f5499
+		100%);
+		background-image: -o-linear-gradient(top, #563d7c 0, #6f5499
+		100%);
+		background-image: linear-gradient(to bottom, #563d7c 0, #6f5499
+		100%);
+		filter:
+		progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c',
+		endColorstr='#6F5499', GradientType=0);
+		background-repeat: repeat-x;
+		}
+
+		.header h1 {
+		font-size: 60px;
+		line-height: 1;
+		text-align: right;
+		color:
+		white;
+		}
+
+		.page-header {
+		border-bottom: 1px solid #eee;
+		margin: 40px 0
+		20px;
+		padding-bottom:
+		9px;
+		text-align: right;
+		padding-right:15px;
+		}
+
+		.enter-data {
+		margin-right:
+		0;
+		margin-left: 0;
+		background-color: #fff;
+		border-color:
+		#ddd;
+		border-width: 1px;
+		border-radius: 4px 4px 0 0;
+		-webkit-box-shadow:
+		none;
+		box-shadow: none;
+		float:right;
+		padding-right:15px;
+		}
+		div{
+		direction:rtl;
+		}
+		.btn-primary{
+		color:
+		#fff;
+		background-color: #337ab7;
+		border-color: #2e6da4;
+		margin-top:46px;
+		margin-right:50px;
+		}
+
+		.btn-primary{
+		color:
+		#fff;
+		background-color: #337ab7;
+		border-color:
+		#2e6da4;
+		}
+
+		.btn{
+		display: inline-block;
+		padding: 6px 12px;
+		margin-bottom:
+		0;
+		font-size:
+		14px;
+		font-weight: 400;
+		line-height:
+		1.42857143;
+		text-align:
+		center;
+		white-space: nowrap;
+		vertical-align:
+		middle;
+		-ms-touch-action:
+		manipulation;
+		touch-action: manipulation;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select:
+		none;
+		user-select: none;
+		background-image: none;
+		border:
+		1px solid
+		transparent;
+		border-radius: 4px;
+
+		}
+
+		.btn-xs{
+		padding: 1px 5px;
+		font-size:
+		12px;
+		line-height: 1.5;
+		border-radius: 3px;
+		background:#e1e1e8;
+		border-color:#e1e1e8;
+		}
+		
+.resultPanel{
+
+margin-top:15px;
+margin-left:auto;
+margin-right:auto;
+
+}
+	</ui:style>
+	<g:HTMLPanel>
+		<div class="{style.header}">
+			<h1>تشخیص موضوعی متن کوتاه</h1>
+			<p>طبقه بندی متن کوتاه با استفاده از الگوریتم LSA</p>
+		</div>
+		<h1 class="{style.page-header}">ورود داده های آموزش و آزمون</h1>
+		<g:HTMLPanel styleName="{style.enter-data}" ui:field="root">
+			<label>انتخاب داده های آموزش</label>
+
+			<g:FormPanel ui:field="docFormTrain">
+				<g:FlowPanel ui:field="inputPaneTrain">
+					<g:FileUpload ui:field="trainUploader"></g:FileUpload>
+					<g:Button ui:field="submitTrain" styleName="{style.btn} {style.btn-xs}">ارسال</g:Button>
+				</g:FlowPanel>
+			</g:FormPanel>
+
+			<label>انتخاب داده های آزمون</label>
+
+			<g:FormPanel ui:field="docFormTest">
+				<g:FlowPanel ui:field="inputPaneTest">
+					<g:FileUpload ui:field="testUploader" />
+					<g:Button ui:field="submitTest" styleName="{style.btn} {style.btn-xs}">ارسال</g:Button>
+				</g:FlowPanel>
+			</g:FormPanel>
+
+		</g:HTMLPanel>
+		<g:Button ui:field="viewResult" styleName="{style.btn} {style.btn-primary}"> مشاهده نتیجه</g:Button>
+		<g:HTMLPanel  ui:field="resultPanel" styleName="{style.resultPanel}"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>
